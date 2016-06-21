@@ -1,10 +1,4 @@
 -- from root directory -- psql < src/server/db/schema.sql
-DROP DATABASE IF EXISTS vitalhealthdb;
-
-CREATE DATABASE vitalhealthdb;
-
-\c vitalhealthdb;
-
 CREATE TABLE doctors (
   id SERIAL PRIMARY KEY,
   name VARCHAR(50),
