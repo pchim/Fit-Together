@@ -15,4 +15,5 @@ app.get('*', (req, res) => {
 });
 
 const port = 3000;
-app.listen(port, () => console.log('Server is listening on port ', port, '\nRefresh the browser '));
+module.exports = app.listen(port, 
+  () => console.log('Server is listening on port ', port, '\nRefresh the browser '));

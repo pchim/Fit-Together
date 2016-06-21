@@ -3,7 +3,16 @@ const options = {
   promiseLib: promise
 };
 const pgp = require('pg-promise')(options);
-const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/vitalhealthdb';
-const db = pgp(connectionString);
+require('dotenv').config();
 
+const baseConnection = process.env.DATABASE_URL;
+let connectionString = baseConnection;
+const dbEnv = {
+  development: () => { connectionString = baseConnection; },
+  testing: () => { connectionString = `${baseConnection}test`; },
+  production: () => { connectionString = 'tbd'; }
+};
+dbEnv[process.env.NODE_ENV]();
+
+const db = pgp(connectionString);
 module.exports = db;
