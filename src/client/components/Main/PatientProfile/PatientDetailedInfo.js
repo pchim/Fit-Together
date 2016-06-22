@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 
 const PatientDetailedInfo = () => (
-  <div className="panel panel-default patient-detailed-container">
+  <div className="card s6 m6 l6">
     <div className="patient-detailed">
       <p>test</p>
       <p>test</p>

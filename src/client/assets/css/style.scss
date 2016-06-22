@@ -1,0 +1,24 @@
+// for side nav bar offset
+body {
+  padding-left: 240px;
+}
+
+@media only screen and (max-width : 992px) {
+  body {
+    padding-left: 0;
+  }
+}
+
+// side nav shadows
+.side-nav{
+  li {   
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+  }
+}
+
+// card image size
+.card img{
+  width: auto;
+  height: 200px;
+}
+

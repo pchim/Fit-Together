@@ -2,8 +2,7 @@ const config = {
   context: `${__dirname}/src/client`,
   entry: {
     javascript: './app.js', // take in javascript entry point
-    html: './index.html', // take in the client's index.html
-    css: './assets/css/style.css'   
+    html: './index.html', // take in the client's index.html 
   },
 
   output: {
@@ -28,9 +27,15 @@ const config = {
         loader: 'file?name=[name].[ext]',
       },
       {
-        test: /\.css$/,
-        loader: 'file?name=assets/css/[name].[ext]',
+        // bundle scss files with bundle.js
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass'],
       },
+      { 
+        // copy over png files
+        test: /\.png$/, 
+        loader: 'file-loader?name=assets/images/[name].[ext]' 
+      }
     ],
   },
 };

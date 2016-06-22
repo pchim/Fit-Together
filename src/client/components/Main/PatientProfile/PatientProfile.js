@@ -6,21 +6,23 @@ import BmiChart from './BmiChart';
 import BpChart from './BpChart';
 import WtChart from './WtChart';
 import GlucoseChart from './GlucoseChart';
+import Stats from '../Stats/Stats';
 
 const PatientProfile = () => (
   <div className="main-container">
     <div className="top-container">
-      <PatientInfo />
-      <PatientRightInfo />
-      <PatientDetailedInfo />
-      <div>
-        <BmiChart />
-        <BpChart />
+      <div className="row">
+      <div className="col s6 m6">
+        <PatientInfo />
       </div>
-      <div>
-        <WtChart />
-        <GlucoseChart />
+      <div className="col s6 m6">  
+        <PatientDetailedInfo />
       </div>
+      </div>
+      <div className="row">
+        <Stats />
+      </div>
+      
     </div>
   </div>
 );

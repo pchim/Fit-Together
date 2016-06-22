@@ -1,0 +1,59 @@
+DROP DATABASE IF EXISTS vitalhealthdb;
+
+CREATE DATABASE vitalhealthdb;
+
+\c vitalhealthdb;
+-- from root directory -- psql < src/server/db/schema.sql
+DROP DATABASE IF EXISTS vitalhealthdb;
+
+CREATE DATABASE vitalhealthdb;
+
+\c vitalhealthdb;
+
+CREATE TABLE doctors (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(50),
+  dob DATE,
+  office VARCHAR(255),
+  phone VARCHAR(10),
+  sex VARCHAR(10)
+);
+
+CREATE TABLE patients (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(50),
+  dob DATE,
+  phone VARCHAR(10),
+  address VARCHAR(250),
+  ssn INTEGER,
+  email VARCHAR(50),
+  sex VARCHAR(10)
+);
+
+CREATE TABLE diagnosis (
+  id SERIAL PRIMARY KEY,
+  category VARCHAR(250)
+);
+CREATE TABLE medications (
+  id SERIAL PRIMARY KEY,
+  dosage VARCHAR(50),
+  brand_name VARCHAR(50),
+  generic_name VARCHAR(50),
+  condition VARCHAR(250)
+);
+
+CREATE TABLE visits (
+  id SERIAL PRIMARY KEY,
+  date_of_visit DATE,
+  time_of_visit TIME,
+  complaint VARCHAR(250),
+  doctor_id INTEGER REFERENCES doctors (id),
+  diagnosis_id INTEGER REFERENCES diagnosis (id),
+  patient_id INTEGER REFERENCES patients (id)
+);
+
+CREATE TABLE visit_medication (
+  id SERIAL PRIMARY KEY,
+  visit_id INTEGER REFERENCES visits (id),
+  medication_id INTEGER REFERENCES medications (id)
+);
