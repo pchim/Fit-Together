@@ -24,6 +24,8 @@ import Challenges from './components/Dashboard/Items/Logs.js';
 import Teams from './components/Dashboard/Items/Teams.js';
 import Tips from './components/Dashboard/Items/Tips.js';
 
+import GeoMap from './components/GeoMap/GeoMap';
+
 const store = createStore(combineReducers(reducers), applyMiddleware(thunk));
 const history = syncHistoryWithStore(browserHistory, store);
 
