@@ -33,7 +33,6 @@ render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App} >
-        <Route path="geomap" component={GeoMap} />
         <Route path="postdoc" component={PostDoc} />
         <Route path="home" component={Home} />
         <Route path="dashboard" component={Dashboard} >
@@ -45,6 +44,7 @@ render(
           <Route path="/dashboard/challenges"component={PlaceHolder} />
           <Route path="/dashboard/teams"component={PlaceHolder} />
           <Route path="/dashboard/tips"component={PlaceHolder} />
+          <Route path="/dashboard/geomap" component={GeoMap} />
         </Route>
       </Route>
     </Router>

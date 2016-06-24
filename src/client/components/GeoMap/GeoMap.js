@@ -1,9 +1,9 @@
 // TODO: MAKE the avatars MOVE in this react component
 import React from 'react';
+import $ from 'jquery';
 // require('dotenv').config();
 // will need later
 // const mapsapi = require('google-maps-api')(process.env.GOOGLE_MAPS_API);
-const maps = google.maps;
 
 /* global google */
 class GeoMap extends React.Component {
@@ -26,7 +26,7 @@ class GeoMap extends React.Component {
   // initialize map and listeners
   initMap() {
     // initialize google maps
-    const map = new maps.Map(document.getElementById('map'), {
+    const map = new google.maps.Map(document.getElementById('map'), {
       center: { lat: 37.7799, lng: -122.4198 },
       zoom: 14
     });
@@ -48,7 +48,7 @@ class GeoMap extends React.Component {
     const image = {
       url: `../../assets/images/avatars/av${num}.png`
     };
-    const marker = new maps.Marker({
+    const marker = new google.maps.Marker({
       position: location,
       map: this.state.map,
       icon: image
@@ -65,7 +65,7 @@ class GeoMap extends React.Component {
       const newLat = newPos.lat() + 0.0005;
       const newLng = newPos.lng();
 
-      const latlng = maps.LatLng(newLat, newLng);
+      const latlng = google.maps.LatLng(newLat, newLng);
       console.log('latlng, ', latlng);
       markers[i].setPosition(latlng);
     }
