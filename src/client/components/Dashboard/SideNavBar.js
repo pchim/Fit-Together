@@ -18,6 +18,7 @@ const SideNavBar = () => (
         <li><Link to="/dashboard/challenges">Challenges</Link></li>
         <li><Link to="/dashboard/teams">Teams</Link></li>
         <li><Link to="/dashboard/tips">Tips</Link></li>
+        <li><Link to="/dashboard/geomap">Map</Link></li>
       </ul>
     </ul>
   </div>
