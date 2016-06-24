@@ -41,7 +41,7 @@
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: loc,
-          zoom: 8
+          zoom: 12
         });
 
         // This event listener will call addMarker() when the map is clicked.
@@ -52,14 +52,19 @@
         // Adds a marker at the center of the map.
         //addMarker(marker);
 
-        setInterval(moveMarkers, 200, markers);
+        setInterval(moveMarkers, 100, markers);
       }
 
       // Adds a marker to the map and push to the array.
       function addMarker(location) {
+        var num = Math.floor(Math.random() * 2) + 2;
+        var image = {
+          url: `./assets/images/avatars/av${num}.png`
+        }
         var marker = new google.maps.Marker({
           position: location,
-          map: map
+          map: map,
+          icon: image
         });
         markers.push(marker);
       }
@@ -69,7 +74,7 @@
           // get positions
           console.log(markers[i].getPosition());
           var newPos = markers[i].getPosition();
-          var newLat = newPos.lat() + .00001;
+          var newLat = newPos.lat() + .0001;
           var newLng = newPos.lng();
 
           var latlng = new google.maps.LatLng(newLat, newLng);
