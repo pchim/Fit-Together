@@ -33,6 +33,7 @@ render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App} >
+        <Route path="geomap" component={GeoMap} />
         <Route path="postdoc" component={PostDoc} />
         <Route path="home" component={Home} />
         <Route path="dashboard" component={Dashboard} >
