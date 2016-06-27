@@ -6,10 +6,11 @@
 }
 
 .horizontal-dash {
-  width: 1000px;
+  width: 65%;
   overflow: scroll;
   white-space: nowrap;
-  padding: 0;
+  padding-right: 35%;
+  margin:20px;
 }
 
 .log-activity {
@@ -19,13 +20,21 @@
 
 .log-activity.card {
   display: inline-block;
+  height: 250px;
+  width: 250px;
 }
 .log-activity.card > .image {
-  height: 200px;
-  width: 200px;
+  height: 90%;
+  width: 90%;
+  margin: 0px auto;
 }
 
 .log-activity.card > .content {
-  width: 100%;
-  padding: auto 5px;
+  text-align: center;
+  font-size: 24px;
+}
+
+p.log-activity {
+  font-size: 24px;
+  padding: 0;
 }
