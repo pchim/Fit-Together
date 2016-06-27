@@ -15,9 +15,9 @@
 	display: inline-block;
 	background-color: #ecf0f1;
 	padding: 15px 20px 15px;
-	/*border-width: 0.5px;
+	border-width: 0.5px;
 	border-color: red;
-	border-style: solid;*/
+	border-style: solid;
 }
 
 .user-info-container {
@@ -36,9 +36,9 @@
 	vertical-align: middle;
 	padding: 15px 20px 15px;
 	font-size: 16px;
-	/*	border-width: 3px;
+	border-width: 3px;
 	border-color: #1f2324;
-	border-style: solid;*/
+	border-style: solid;
 }
 
 .user-info label {
