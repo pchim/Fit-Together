@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const Logbook = ({ card }) => (
+const LogbookCard = ({ card }) => (
   <div className="log-activity card debug">
     <div className="image debug">
       {card.image}
@@ -11,9 +11,9 @@ const Logbook = ({ card }) => (
   </div>
 );
 
-Logbook.propTypes = {
+LogbookCard.propTypes = {
   card: React.PropTypes.object.isRequired,
 };
 
-export default Logbook;
+export default LogbookCard;
 
