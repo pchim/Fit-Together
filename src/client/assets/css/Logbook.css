@@ -1,0 +1,31 @@
+
+.debug {
+  border-width: 2px;
+  border-color: red;
+  border-style: solid;
+}
+
+.horizontal-dash {
+  width: 1000px;
+  overflow: scroll;
+  white-space: nowrap;
+  padding: 0;
+}
+
+.log-activity {
+  margin: 5px 5px;
+  padding: 5px 5px;
+}
+
+.log-activity.card {
+  display: inline-block;
+}
+.log-activity.card > .image {
+  height: 200px;
+  width: 200px;
+}
+
+.log-activity.card > .content {
+  width: 100%;
+  padding: auto 5px;
+}
