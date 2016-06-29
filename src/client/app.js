@@ -37,21 +37,12 @@ render(
         <IndexRoute component={Home} />
         <Route path="/dashboard" component={Dashboard} >
           <IndexRoute component={Profile} />
-<<<<<<< c13dc074bd2c760ecf76da535864918a14de65c3
           <Route path="/dashboard/settings"component={UserInfo} />
-          <Route path="/dashboard/log"component={PlaceHolder} />
+          <Route path="/dashboard/logbook"component={Logbook} />
           <Route path="/dashboard/stats"component={Stats} />
           <Route path="/dashboard/challenges"component={Challenges} />
           <Route path="/dashboard/teams"component={Teams} />
           <Route path="/dashboard/tips"component={PlaceHolder} />
-=======
-          <Route path="/dashboard/:username/settings"component={UserInfo} />
-          <Route path="/dashboard/:username/logbook"component={Logbook} />
-          <Route path="/dashboard/:username/stats"component={Stats} />
-          <Route path="/dashboard/:username/challenges"component={PlaceHolder} />
-          <Route path="/dashboard/:username/teams"component={Teams} />
-          <Route path="/dashboard/:username/tips"component={PlaceHolder} />
->>>>>>> Initialize logbook component
         </Route>
       </Route>
     </Router>
