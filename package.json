@@ -14,7 +14,7 @@
     "watch-s": "babel --watch src/server -d dev/server --copy-files",
     "seed": "node src/server/testData/seedUsers.js; node src/server/testData/seedTeams.js;",
     "lint": "eslint src --color",
-    "move-assets": "cp -R src/client/assets/ dev/client/",
+    "move-assets": "cp -R src/client/assets/ dev/client/assets",
     "test": "npm run lint",
     "seed-log": "node src/server/testData/seedSleep.js; node src/server/testData/seedMem.js;  node src/server/testData/seedExercise.js;  node src/server/testData/seedFood.js",
     "seed-test": "node src/server/testData/seedTeams.js;",
