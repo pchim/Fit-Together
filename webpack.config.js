@@ -1,4 +1,11 @@
 const webpack = require('webpack');
+let production = false;
+let fp = 'dev';
+if (process.env.NODE_ENV === 'production') {
+  production = true;
+  fp = 'dist';
+}
+console.log('node env', process.env.NODE_ENV);
 const config = {
   context: `${__dirname}/src/client`,
   entry: {
@@ -8,7 +15,7 @@ const config = {
 
   output: {
     filename: 'bundle.js',
-    path: `${__dirname}/dev/client`,
+    path: `${__dirname}/${fp}/client`,
   },
 
   module: {
