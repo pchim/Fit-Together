@@ -8,14 +8,15 @@
   "scripts": {
     "build": "babel src/server -d dev/server --copy-files; webpack; npm run move-assets",
     "start": "npm run watch & nodemon dev/server/server.js & open http://localhost:3000",
-    "build-prod": "npm run build",
-    "start-prod": "node dev/server/server.js",
+    "build-dist": "babel src/server -d dist/server --copy-files;NODE_ENV=production webpack; npm run move-assets-dist",
+    "start-dist": "NODE_ENV=production node dist/server/server.js",
     "watch": "npm run watch-c & npm run watch-s",
     "watch-c": "npm run move-assets & webpack --watch --progress",
     "watch-s": "babel --watch src/server -d dev/server --copy-files",
     "seed": "node src/server/testData/seedUsers.js; node src/server/testData/seedTeams.js",
     "lint": "eslint src --color",
     "move-assets": "cp -R src/client/assets/ dev/client/assets",
+    "move-assets-dist": "cp -R src/client/assets/ dist/client/assets",
     "test": "npm run lint",
     "test-votes": "mocha --compilers js:babel-core/register --require ./tests/testHelpers.js  --recursive",
     "seed-log": "node src/server/testData/seedSleep.js; node src/server/testData/seedMem.js; node src/server/testData/seedExercise.js; node src/server/testData/seedFood.js",
@@ -25,7 +26,8 @@
     "json": "node src/server/testData/seedSleep.js",
     "mocha-db": "mocha ",
     "test-tape": "node specs/testApi | tap-spec",
-    "test-mocha": "mocha ./specs -R nyan --compilers js:babel-register; mocha ./specs -R list --compilers js:babel-register"
+    "test-mocha": "mocha ./specs -R nyan --compilers js:babel-register; mocha ./specs -R list --compilers js:babel-register",
+    "init-prod": "npm install; npm run build-dist; npm run start-dist"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
@@ -62,6 +64,7 @@
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
     "d3": "^3.5.17",
+    "dotenv": "^2.0.0",
     "es6-promise": "^3.2.1",
     "express": "~4.13.1",
     "express-cors": "0.0.3",
