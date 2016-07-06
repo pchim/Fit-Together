@@ -1,9 +1,18 @@
 const webpack = require('webpack');
 let production = false;
 let fp = 'dev';
+let plugs = [];
 if (process.env.NODE_ENV === 'production') {
   production = true;
   fp = 'dist';
+  plugs = [
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }),
+  ];
 }
 console.log('node env', process.env.NODE_ENV);
 const config = {
@@ -45,6 +54,7 @@ const config = {
     ],
   },
 
+<<<<<<< c2d5065631650b6274a21a8bfc5112a33872d796
   // plugins: [
   //   new webpack.optimize.DedupePlugin(),
   //   new webpack.optimize.UglifyJsPlugin({
@@ -53,5 +63,8 @@ const config = {
   //     }
   //   }),
   // ]
+=======
+  plugins: plugs
+>>>>>>> Update webpack for distribution
 };
 module.exports = config;
