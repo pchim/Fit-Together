@@ -1,0 +1,4 @@
+FROM ft_packages:0.7
+WORKDIR /ftcode
+ADD dist /ftcode/dist
+CMD ["npm", "run", "start-dist"]

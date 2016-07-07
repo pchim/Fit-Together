@@ -28,4 +28,5 @@ const redisCopyTeams = (req, res) => {
     .catch((err) => console.log('error in sending to redis', err));
 };
 
+
 redisCopyTeams();
