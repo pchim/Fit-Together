@@ -54,17 +54,6 @@ const config = {
     ],
   },
 
-<<<<<<< c2d5065631650b6274a21a8bfc5112a33872d796
-  // plugins: [
-  //   new webpack.optimize.DedupePlugin(),
-  //   new webpack.optimize.UglifyJsPlugin({
-  //     compress: {
-  //       warnings: false
-  //     }
-  //   }),
-  // ]
-=======
   plugins: plugs
->>>>>>> Update webpack for distribution
 };
 module.exports = config;
