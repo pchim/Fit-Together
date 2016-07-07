@@ -1,8 +1,8 @@
+
 import React, { Component, PropTypes } from 'react';
 import TeamMemberList from './TeamMemberList';
 import TeamChatMessage from './TeamChatMessage';
 import io from 'socket.io-client';
-import $ from 'jquery';
 
 const exampleUser = {
   name: 'Jessica Jones',
@@ -10,22 +10,10 @@ const exampleUser = {
 };
 
 class TeamChat extends Component {
-	constructor(props) {
+  constructor(props) {
     super(props);
+
     this.socket = io.connect();
-    this.socket.on('chat message', this.recieveMessage.bind(this));
-
-    this.state = {
-      messages: []
-    };
-  }
-
-  recieveMessage(message) {
-    console.log(this.state);
-    let messages = this.state.messages;
-    this.setState({
-      messages: messages.concat(message)
-    });
   }
 
   handleSubmit(event) {
@@ -37,11 +25,7 @@ class TeamChat extends Component {
       description: new Date()
     };
     this.props.sendMessage(formData); 
-    if (this.refs.message.value !== '') {
-      this.connection.emit('chat message', { user: 'Jessica Jones', text: this.refs.message.value });
-      this.refs.message.value = '';
-    }
-    $('#message-to-send').val('');
+    this.socket.emit('new message', formData);
   }
 
 
@@ -70,7 +54,7 @@ class TeamChat extends Component {
                   Hi Vincent, how are you? How is the project coming along?
                 </div>
               </li>
-              {this.state.messages.map(message => <TeamChatMessage message={message} />)}
+              {this.props.messages.map(message => <TeamChatMessage message={message} />)}
             </ul>
           </div>        
           <div className="chat-message clearfix">
