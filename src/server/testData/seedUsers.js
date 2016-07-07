@@ -2,10 +2,10 @@
 const usersCtrl = require('../controllers/usersCtrl.js');
 
 const exampleUserLocation = [
-  { lat: 37.790629, lng: -122.401800
-  { lat: 37.786063, lng: -122.431807
-  { lat: 37.759391, lng: -122.412258
-  { lat: 37.762762, lng: -122.434837
+  { lat: 37.790629, lng: -122.401800 },
+  { lat: 37.786063, lng: -122.431807 },
+  { lat: 37.759391, lng: -122.412258 },
+  { lat: 37.762762, lng: -122.434837 }
 ];
 
 const exampleUserData = [
