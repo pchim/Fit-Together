@@ -5,7 +5,6 @@ const host = url.parse(process.env.HOST);
 bluebird.promisifyAll(redis.RedisClient.prototype);
 bluebird.promisifyAll(redis.Multi.prototype);
 
-console.log('CONNECTING TO>>>>>>>>', host.hostname);
 const client = redis.createClient('6379', host.hostname);
 
 client.on('error', (err) => {
