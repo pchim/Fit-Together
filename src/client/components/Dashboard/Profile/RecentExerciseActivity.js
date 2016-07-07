@@ -26,12 +26,22 @@ class RecentExerciseActivity extends Component {
         </div>
         <div className="profile-activity-body">
           <div className="profile-text-body-container">
-            <ul>
-              <p className="profile-text-body">{this.exerciseData.slice(-3).map((e, index) => 
-                <RecentExerciseActivityView type={e.type} duration={e.duration} key={index} date={e.date_performed} />
-              )}
-              </p>
-            </ul>
+            <div className="table-responsive">
+              <table className="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Duration</th>
+                  </tr>
+                </thead>
+                <tbody className="profile-text-body">
+                  {this.exerciseData.slice(-3).map((e, index) => 
+                    <RecentExerciseActivityView type={e.type} duration={e.duration} key={index} date={e.date_performed} />
+                  )}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

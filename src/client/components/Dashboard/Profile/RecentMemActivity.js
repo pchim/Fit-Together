@@ -26,12 +26,22 @@ class RecentMemActivity extends Component {
         </div>
         <div className="profile-activity-body">
           <div className="profile-text-body-container">
-            <ul>
-              <p className="profile-text-body">{this.MemData.slice(-3).map((m, index) => 
-                <RecentMemActivityView mood={m.mood} energy={m.energy} key={index} motivation={m.motivation} date={m.date_performed} />
-              )}
-              </p>
-            </ul>
+            <div className="table-responsive">
+              <table className="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Mood</th>
+                    <th>Energy</th>
+                    <th>Motivation</th>
+                  </tr>
+                </thead>
+                <tbody className="profile-text-body">{this.MemData.slice(-3).map((m, index) => 
+                  <RecentMemActivityView mood={m.mood} energy={m.energy} key={index} motivation={m.motivation} date={m.date_performed} />
+                )}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

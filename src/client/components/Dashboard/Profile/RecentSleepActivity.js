@@ -26,12 +26,21 @@ class RecentSleepActivity extends Component {
         </div>
         <div className="profile-activity-body">
           <div className="profile-text-body-container">
-            <ul>
-              <p className="profile-text-body">{this.SleepData.slice(-3).map((m, index) => 
-                <RecentSleepActivityView duration={m.duration} quality={m.quality} key={index} date={m.date_performed} />
-              )}
-              </p>
-            </ul>
+            <div className="table-responsive">
+              <table className="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Duration</th>
+                    <th>Quality</th>
+                  </tr>
+                </thead>
+                <tbody className="profile-text-body">{this.SleepData.slice(-3).map((m, index) => 
+                  <RecentSleepActivityView duration={m.duration} quality={m.quality} key={index} date={m.date_performed} />
+                )}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

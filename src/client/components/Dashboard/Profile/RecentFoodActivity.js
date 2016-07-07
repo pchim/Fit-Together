@@ -27,12 +27,23 @@ class RecentFoodActivity extends Component {
         </div>
         <div className="profile-activity-body">
           <div className="profile-text-body-container">
-            <ul>
-              <p className="profile-text-body">{this.foodData.slice(-3).map((f, index) => 
-                <RecentFoodActivityView carbs={f.carbs} fats={f.fats} protein={f.protein} key={index} date={f.date_performed} />
-              )}
-              </p>
-            </ul>
+            <div className="table-responsive">
+              <table className="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Carbs</th>
+                    <th>Fats</th>
+                    <th>Protein</th>
+                  </tr>
+                </thead>
+                <tbody className="profile-text-body">
+                  {this.foodData.slice(-3).map((f, index) => 
+                    <RecentFoodActivityView carbs={f.carbs} fats={f.fats} protein={f.protein} key={index} date={f.date_performed} />
+                  )}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

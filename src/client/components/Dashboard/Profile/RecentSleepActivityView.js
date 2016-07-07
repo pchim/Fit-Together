@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
 const RecentSleepActivityView = (props) => (
-  <li>
-    {props.quality}[Q], {props.duration}[D] ({props.date})  
-  </li>
+  <tr>
+    <td>{props.date}</td>
+    <td>{props.duration}</td>
+    <td>{props.quality}</td>
+  </tr>
 );
 
 export default RecentSleepActivityView;
