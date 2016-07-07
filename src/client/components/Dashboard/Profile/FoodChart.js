@@ -38,10 +38,20 @@ class FoodChart extends Component {
           className="food-chart"
           width={200} height={100} series={series} minY={0}
         >
-          <Lines />
-          <Title position="top center" style={{ textAnchor: 'middle' }}>
-            Calorie Intake
-          </Title>
+          <Layer width='80%' height='90%' position='top center'>
+            <Ticks
+              axis='y'
+              lineLength='100%'
+              lineVisible={true}
+              lineStyle={{stroke:'lightgray'}}
+              labelStyle={{textAnchor:'end',dominantBaseline:'middle',fill:'lightgray'}}
+              labelAttributes={{x: -5}}
+            />
+            <Lines />
+            <Title position="top center" style={{ textAnchor: 'middle' }}>
+              Calorie Intake
+            </Title>
+          </Layer>
         </Chart>
         <div className="chart-result">Last Entry: {this.mostRecent} cals</div>
       </div>

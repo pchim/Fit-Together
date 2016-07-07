@@ -50,8 +50,18 @@ class MemChart extends Component {
           width={500} height={150} series={series} minY={0}
 
         >
+        <Layer width='80%' height='90%' position='top center'>
+          <Ticks
+            axis='y'
+            lineLength='100%'
+            lineVisible={true}
+            lineStyle={{stroke:'lightgray'}}
+            labelStyle={{textAnchor:'end',dominantBaseline:'middle',fill:'lightgray'}}
+            labelAttributes={{x: -5}}
+          />
           <Lines />
           <Dots />
+        </Layer>
         </Chart>
         <div className="chart-result">Last Entry: Mood: {this.mostRecentMood} Energy: {this.mostRecentEnergy} Motivation: {this.mostRecentMotivation} </div>
       </div>
