@@ -19,6 +19,8 @@ class LogbookSleepView extends Component {
       date_performed: today,
     };
     this.props.addSleep(formData);
+    this.refs.duration.value = '';
+    this.refs.quality.value = '';
     console.log('added data');
   }
 

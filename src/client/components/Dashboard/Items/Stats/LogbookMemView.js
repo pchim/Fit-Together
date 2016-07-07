@@ -20,6 +20,9 @@ class LogbookMemView extends Component {
       motivation: this.refs.motivation.value,
     };
     this.props.addMem(formData);
+    this.refs.mood.value = '';
+    this.refs.energy.value = '';
+    this.refs.motivation.value = '';
     console.log('added data');
   }
 
