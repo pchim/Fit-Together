@@ -14,10 +14,15 @@ class SleepChart extends Component {
   constructor(props) {
     super(props);
     const sleepData = [];
+    const mostRecentDuration = [];
+    const mostRecentQuality = [];
+
   }
 
   componentWillReceiveProps(nextProps) {
     this.sleepData = nextProps.activities.data;
+    this.mostRecentQuality = nextProps.activities.data[0].slice(-1)[0].quality;
+    this.mostRecentDuration = nextProps.activities.data[0].slice(-1)[0].duration;
   }
 
   render() {
@@ -44,6 +49,7 @@ class SleepChart extends Component {
             <Dots />
           </Transform>
         </Chart>
+        <div className="chart-result">Last Entry: Duration: {this.mostRecentDuration} Quality: {this.mostRecentQuality}</div>
       </div>
 
     );

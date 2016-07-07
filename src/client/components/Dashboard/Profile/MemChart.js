@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import MemData from './MemData';
+
 const {
   // main component
   Chart, 
@@ -17,21 +17,23 @@ class MemChart extends Component {
     const moodData = [];
     const motivationData = [];
     const energyData = [];
+    const mostRecentMood = [];
+    const mostRecentEnergy = [];
+    const mostRecentMotivation = [];
   }
 
   componentWillReceiveProps(nextProps) {
-    this.moodData = nextProps.activities.data;
-    this.motivationData = nextProps.activities.data;
-    this.energyData = nextProps.activities.data;
+    console.log('this is inside mem chart!!', nextProps);
+    this.moodData = nextProps.activities.data[3].slice(-7).map(s => parseInt(s.mood));
+    this.energyData = nextProps.activities.data[3].slice(-7).map(s => parseInt(s.energy));
+    this.motivationData = nextProps.activities.data[3].slice(-7).map(s => parseInt(s.motivation));
+    this.mostRecentMood = nextProps.activities.data[3].slice(-1)[0].mood;
+    this.mostRecentEnergy = nextProps.activities.data[3].slice(-1)[0].energy;
+    this.mostRecentMotivation = nextProps.activities.data[3].slice(-1)[0].motivation;
   }
 
-  render() {
-    if (this.moodData) { 
-      this.moodData = MemData.slice(-7).map(s => parseInt(s.mood, 10));
-      this.energyData = MemData.slice(-7).map(s => parseInt(s.energy, 10));
-      this.motivationData = MemData.slice(-7).map(s => parseInt(s.motivation, 10));
-    }  
 
+  render() {
     const series = [{
       data: this.moodData
     }, {
@@ -51,7 +53,7 @@ class MemChart extends Component {
           <Lines />
           <Dots />
         </Chart>
-
+        <div className="chart-result">Last Entry: Mood: {this.mostRecentMood} Energy: {this.mostRecentEnergy} Motivation: {this.mostRecentMotivation} </div>
       </div>
 
     );
