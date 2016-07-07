@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import TeamMemberList from './TeamMemberList';
 import TeamChatMessage from './TeamChatMessage';
 import io from 'socket.io-client';
+import $ from 'jquery';
 
 const exampleUser = {
   name: 'Jessica Jones',
@@ -11,8 +12,6 @@ const exampleUser = {
 class TeamChat extends Component {
 	constructor(props) {
     super(props);
-
-    this.socket = io.connect();
   }
 
   handleSubmit(event) {
@@ -24,7 +23,7 @@ class TeamChat extends Component {
       description: new Date()
     };
     this.props.sendMessage(formData); 
-    this.socket.emit('new message', formData);
+    $('#message-to-send').val('');
   }
 
 
