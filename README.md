@@ -19,7 +19,7 @@ Peter Chim
 
 ## Table of Contents
 
-1. [Usage](#Usage)
+1. [Demo](#Demo)
 1. [Tech Stack](#tech-stack)
 1. [System Architecture](#system-architecture)
 1. [SQL Database Schema](#sql-database-schema)
@@ -29,9 +29,15 @@ Peter Chim
     1. [Roadmap](#roadmap)
 1. [Contributing](#contributing)
 
-## Usage
+## Demo
 
-> Some usage instructions
+Visit [Fit Together](fit-together.me) and click on the Demo button to get started
+
+Interact with teams in your community
+![Team Chat](https://s31.postimg.org/hhwhy65mz/team_chat.png)
+
+Health and fitness trivia game
+![Trivia](https://s31.postimg.org/8qph3wmbv/trivia.png) 
 
 ## Tech Stack
 
