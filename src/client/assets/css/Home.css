@@ -211,8 +211,9 @@
 }
 
 .footer .row .footer-info img {
-  height: 3em; 
-  width: 3em;
+  height: 5em; 
+  width: 5em;
+  border-radius: 62em;
 }
 
 .footer .row .footer-info h3 { 

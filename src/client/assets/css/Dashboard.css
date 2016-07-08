@@ -17,7 +17,7 @@ body {
     flex: 1;
     transform: translate3d(220px, 0, 0);
     transition: transform .3s;
-    height: 80%;
+    height: 10%;
     width: 80%;
     margin-top: 0;
     /*background: #C5DDEB;*/

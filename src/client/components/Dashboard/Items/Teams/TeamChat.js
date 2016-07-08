@@ -1,3 +1,4 @@
+
 import React, { Component, PropTypes } from 'react';
 import TeamMemberList from './TeamMemberList';
 import TeamChatMessage from './TeamChatMessage';
@@ -9,10 +10,22 @@ const exampleUser = {
 };
 
 class TeamChat extends Component {
-	constructor(props) {
+  constructor(props) {
     super(props);
+    this.connection = io.connect();
+    this.connection.on('chat message', this.recieveMessage.bind(this));
 
-    this.socket = io.connect();
+    this.state = {
+      messages: []
+    };
+  }
+
+  recieveMessage(message) {
+    console.log(this.state);
+    let messages = this.state.messages;
+    this.setState({
+      messages: messages.concat(message)
+    });
   }
 
   handleSubmit(event) {

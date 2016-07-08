@@ -1,8 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 
 const {
+  // main component
   Chart, 
+  // graphs
   Bars, Cloud, Dots, Labels, Lines, Pies, RadialLines, Ticks, Title,
+  // wrappers
+  Layer, Animate, Transform, Handlers,
+  // helpers
   DropShadow, Gradient, helpers
 } = require('rumble-charts');
 
@@ -36,7 +41,18 @@ class ExerciseChart extends Component {
           width={200} height={150} 
           series={series} minY={0}
         >
-          <Lines />
+        <Layer width='80%' height='90%' position='top center'>
+          <Ticks
+            axis='y'
+            lineLength='100%'
+            lineVisible={true}
+            lineStyle={{stroke:'lightgray'}}
+            labelStyle={{textAnchor:'end',dominantBaseline:'middle',fill:'lightgray'}}
+            labelAttributes={{x: -5}}
+          />
+
+            <Lines />
+          </Layer>
         </Chart>
         <div className="chart-result">Last Entry: {this.mostRecent} mins</div>
       </div>

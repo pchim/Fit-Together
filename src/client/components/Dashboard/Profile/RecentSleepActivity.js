@@ -21,17 +21,26 @@ class RecentSleepActivity extends Component {
         <div className="profile-activity-header">
           <div className="profile-text-header-container">
             <img src={icon.sleep} className="activity-icon img-circle" alt="test" />
-            <p className="profile-text-header">Recent Sleep</p>
+            <p className="profile-text-header"><strong>Recent Sleep</strong></p>
           </div>
         </div>
         <div className="profile-activity-body">
           <div className="profile-text-body-container">
-            <ul>
-              <p className="profile-text-body">{this.SleepData.slice(-3).map((m, index) => 
-                <RecentSleepActivityView duration={m.duration} quality={m.quality} key={index} date={m.date_performed} />
-              )}
-              </p>
-            </ul>
+            <div className="table-responsive">
+              <table className="table">
+                <thead className="table-header">
+                  <tr>
+                    <th>Date</th>
+                    <th>Duration</th>
+                    <th>Quality</th>
+                  </tr>
+                </thead>
+                <tbody className="profile-text-body">{this.SleepData.slice(-3).map((m, index) => 
+                  <RecentSleepActivityView duration={m.duration} quality={m.quality} key={index} date={m.date_performed} />
+                )}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

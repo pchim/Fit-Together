@@ -14,7 +14,7 @@ class Tips extends Component {
 
   render() {
     console.log('TIPS INSIDE RENDER', this.tips);
-    const random = Math.floor((Math.random() * 5) + 1);
+    const random = Math.floor((Math.random() * 6) + 1);
     console.log('this is the random tip', random);
     const tipOftheDay = this.tips[random];
     console.log('tip of the day', tipOftheDay);  
@@ -25,7 +25,7 @@ class Tips extends Component {
           <img className="img-thumbnail tip-icon" src={tipOftheDay.image} alt="avatar" />
         </div>
         <div className="tips-description">
-          <p className="chart-title">Tip Of The Day</p>
+          <p className="chart-title-tips">Tip Of The Day</p>
           <div>{tipOftheDay.tip}</div>
         </div>
       </div>

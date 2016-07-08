@@ -22,6 +22,11 @@ class LogbookExerciseView extends Component {
       user_id: 1
     };
     this.props.addExercise(formData);
+    this.refs.type.value = '';
+    this.refs.duration.value = '';
+    this.refs.distance.value = '';
+    this.refs.reps.value = '';
+    this.refs.sets.value = '';
     console.log('added data');
   }
 

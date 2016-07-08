@@ -21,6 +21,10 @@ class LogbookFoodView extends Component {
       calories: this.refs.calories.value,
     };
     this.props.addFood(formData);
+    this.refs.protein.value = '';
+    this.refs.fats.value = '';
+    this.refs.carbs.value = '';
+    this.refs.calories.value = '';
     console.log('added data');
   }
 

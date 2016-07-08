@@ -92,6 +92,7 @@
 
 .log-activity input {
   width: 8em;
+  text-align: center;
   margin-top: 0.7em;
   border-width: 0.8px;
   border-color: #CCCBCB;
