@@ -1,12 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-const exampleUserLocation = [
-  { lat: 37.790629, lng: -122.401800, user_icon: 'https://tutsplus-media.s3.amazonaws.com/photo.tutsplus.com/uploads/2013/09/benlucas-web-portrait-16.jpg' },
-  { lat: 37.786063, lng: -122.431807, user_icon: 'http://www.timo-wadenpohl.de/files/tw/content/about/timo_wadenpohl_portrait.jpg' },
-  { lat: 37.759391, lng: -122.412258, user_icon: 'http://getparade.com/media/imagic/square3.jpg' },
-  { lat: 37.762762, lng: -122.434837, user_icon: 'http://d38we5ntdyxyje.cloudfront.net/857749/profile/KZPZNEAZ_avatar_medium_square.jpg' }
-];
-
 const exampleUser = {
   name: 'Jessica Jones',
   user_icon: 'https://s-media-cache-ak0.pinimg.com/564x/7c/1d/15/7c1d156f6e62f5559e8fada72b2117f7.jpg'
@@ -23,7 +16,6 @@ class Map extends Component {
     };
     this.initMap = this.initMap.bind(this);
     this.members = [];
-    // console.log('this.props.members', this.props.members);
   }
 
   componentDidMount() {
@@ -45,9 +37,10 @@ class Map extends Component {
     });
     
     for (let i = 0; i < members.length; i++) {
+      console.log('map', members);
       const infowindow = new google.maps.InfoWindow({ content: '<img class="img-circle member-icon" src=\"' + members[i].user_icon + '\" alt="avatar" />' });
       const marker = new google.maps.Marker({
-        position: exampleUserLocation[i],
+        position: { lat: parseFloat(members[i].lat), lng: parseFloat(members[i].lng) },
         map: map,
         title: 'Hello World!'
       });

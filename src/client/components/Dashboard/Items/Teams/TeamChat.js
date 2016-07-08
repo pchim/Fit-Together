@@ -36,6 +36,7 @@ class TeamChat extends Component {
       message: $('#message-to-send').val(),
       description: new Date()
     };
+    
     this.props.sendMessage(formData); 
     this.socket.emit('new message', formData);
   }

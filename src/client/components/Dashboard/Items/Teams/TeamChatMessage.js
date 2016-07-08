@@ -19,4 +19,8 @@ class TeamChatMessage extends Component {
   }
 }
 
+TeamChatMessage.propTypes = {
+  message: PropTypes.obj
+};
+
 export default TeamChatMessage;
