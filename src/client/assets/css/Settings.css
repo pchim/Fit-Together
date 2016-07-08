@@ -212,8 +212,10 @@
 .profile-activity-body {
   /*margin-top: 0.5em;*/
   position: relative;
-  width: 100%;
+  width: 98%;
   text-align: center;
+  margin-left: 1%;
+
 /*  border-width: 0.5px;
   border-color: red;
   border-style: solid;*/
