@@ -25,7 +25,7 @@ class Tips extends Component {
           <img className="img-thumbnail tip-icon" src={tipOftheDay.image} alt="avatar" />
         </div>
         <div className="tips-description">
-          <p className="chart-title">Tip Of The Day</p>
+          <p className="chart-title-tips">Tip Of The Day</p>
           <div>{tipOftheDay.tip}</div>
         </div>
       </div>

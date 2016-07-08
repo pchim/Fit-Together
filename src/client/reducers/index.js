@@ -108,7 +108,7 @@ export const error = (state, action) => {
 export const activities = (state, action) => {
   switch (action.type) {
     case RECEIVE_ACTIVITIES: {
-      return state.concat([action.data]) || state;
+      return action.data || state;
     }
     default:
       return state || {};

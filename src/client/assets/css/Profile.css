@@ -175,6 +175,17 @@
 	padding-top: 0.5em;
 }
 
+.chart-title-tips {
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 1.7em;
+  padding-bottom: .7em;
+}
+
 .chart-result {
 	color: black;
 	font-family: 'Roboto', sans-serif;

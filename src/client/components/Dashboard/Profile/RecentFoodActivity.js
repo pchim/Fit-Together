@@ -22,14 +22,14 @@ class RecentFoodActivity extends Component {
         <div className="profile-activity-header">
           <div className="profile-text-header-container">
             <img src={icon.food} className="activity-icon img-circle" alt="test" />
-            <p className="profile-text-header">Recent Food</p>
+            <p className="profile-text-header"><strong>Recent Food</strong></p>
           </div>
         </div>
         <div className="profile-activity-body">
           <div className="profile-text-body-container">
             <div className="table-responsive">
-              <table className="table table-bordered">
-                <thead>
+              <table className="table">
+                <thead className="table-header">
                   <tr>
                     <th>Date</th>
                     <th>Carbs</th>
