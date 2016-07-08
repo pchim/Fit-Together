@@ -8,7 +8,6 @@ import LogbookExerciseView from './LogbookExerciseView';
 import LogbookFoodView from './LogbookFoodView';
 import LogbookSleepView from './LogbookSleepView';
 
-
 class Stats extends Component {
   constructor(props) {
     super(props);
@@ -20,11 +19,13 @@ class Stats extends Component {
     this.dataNum = 0;
     this.fieldNum = 0;
     this.state = {
-      xdataNum: 2,
+      xdataNum: 0,
       xfieldNum: 0,
-      ydataNum: 2,
-      yfieldNum: 0,
+      ydataNum: 0,
+      yfieldNum: 1,
+      rSquareValue: 0,
     };
+    this.updateRsquareView = this.updateRsquareView.bind(this);
   }
 
   componentWillMount() {
@@ -37,6 +38,10 @@ class Stats extends Component {
 
   componentWillReceiveProps(propsSoon) {
     // this.sleep = propsSoon;
+  }
+
+  updateRsquareView(rSquareValue) {
+    this.setState({ rSquareValue });
   }
 
   xsetDataNum(xdataNum) {
@@ -90,6 +95,7 @@ class Stats extends Component {
                   D={this.D}
                   size={{ height: '400', width: '400' }} 
                   id='regression-chart'
+                  updateRsquareView={this.updateRsquareView}
                 />
               </div>
             </div>
@@ -97,7 +103,7 @@ class Stats extends Component {
               <div className="chart-control-container">
                 <div className="stat-chart-title">Chart Control</div>
                 <div className="stats-box-inner">
-                  <h1>X-Axis: Category</h1>
+                  <h1>X-Axis: Category - {D[this.state.xdataNum].title}</h1>
                   <div>
                     {D.map((dayData, index) => 
                       <button 
@@ -106,7 +112,7 @@ class Stats extends Component {
                       >{dayData.title}</button>)
                       }
                   </div>
-                  <h1>X-Axis: Field</h1>
+                  <h1>X-Axis: Field - {D[this.state.xdataNum].fields[this.state.xfieldNum]} </h1>
                   <div>
                     {D[this.state.xdataNum].fields.map((fields, index) => 
                       <button 
@@ -117,7 +123,7 @@ class Stats extends Component {
                   </div>
                 </div>
                 <div className="stats-box-inner">
-                  <h1>Y-Axis: Category</h1>
+                  <h1>Y-Axis: Category - {D[this.state.ydataNum].title} </h1>
                   <div>
                     {D.map((dayData, index) => 
                       <button 
@@ -126,7 +132,7 @@ class Stats extends Component {
                       >{dayData.title}</button>)
                       }
                   </div>
-                  <h1>Y-Axis: Field</h1>
+                  <h1>Y-Axis: Field - {D[this.state.ydataNum].fields[this.state.yfieldNum]} </h1>
                   <div>
                     {D[this.state.ydataNum].fields.map((fields, index) => 
                       <button 

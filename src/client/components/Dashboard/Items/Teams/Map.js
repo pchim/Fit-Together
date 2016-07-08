@@ -1,11 +1,4 @@
-import React from 'react';
-
-const exampleUserLocation = [
-  { lat: 37.790629, lng: -122.401800, user_icon: 'https://tutsplus-media.s3.amazonaws.com/photo.tutsplus.com/uploads/2013/09/benlucas-web-portrait-16.jpg' },
-  { lat: 37.786063, lng: -122.431807, user_icon: 'http://www.timo-wadenpohl.de/files/tw/content/about/timo_wadenpohl_portrait.jpg' },
-  { lat: 37.759391, lng: -122.412258, user_icon: 'http://getparade.com/media/imagic/square3.jpg' },
-  { lat: 37.762762, lng: -122.434837, user_icon: 'http://d38we5ntdyxyje.cloudfront.net/857749/profile/KZPZNEAZ_avatar_medium_square.jpg' }
-];
+import React, { Component, PropTypes } from 'react';
 
 const exampleUser = {
   name: 'Jessica Jones',
@@ -13,7 +6,7 @@ const exampleUser = {
 }; 
 
 /* global google */
-class Map extends React.Component {
+class Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,13 +15,18 @@ class Map extends React.Component {
       markers: []
     };
     this.initMap = this.initMap.bind(this);
+    this.members = [];
   }
 
   componentDidMount() {
-    this.initMap();
+    this.initMap(this.members);
+  }
+  componentWillReceiveProps(nextProps) {
+    this.members = nextProps.members;
+    this.initMap(this.members);
   }
 
-  initMap() {
+  initMap(members) {
     // initialize google maps
     const center = { lat: 37.783913, lng: -122.409020 };
     const loc = this.state.location;
@@ -38,12 +36,11 @@ class Map extends React.Component {
       styles: [{"elementType":"geometry","stylers":[{"hue":"#ff4400"},{"saturation":-68},{"lightness":-4},{"gamma":0.72}]},{"featureType":"road","elementType":"labels.icon"},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"hue":"#0077ff"},{"gamma":3.1}]},{"featureType":"water","stylers":[{"hue":"#00ccff"},{"gamma":0.44},{"saturation":-33}]},{"featureType":"poi.park","stylers":[{"hue":"#44ff00"},{"saturation":-23}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"hue":"#007fff"},{"gamma":0.77},{"saturation":65},{"lightness":99}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"gamma":0.11},{"weight":5.6},{"saturation":99},{"hue":"#0091ff"},{"lightness":-86}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"lightness":-48},{"hue":"#ff5e00"},{"gamma":1.2},{"saturation":-23}]},{"featureType":"transit","elementType":"labels.text.stroke","stylers":[{"saturation":-64},{"hue":"#ff9100"},{"lightness":16},{"gamma":0.47},{"weight":2.7}]}]
     });
     
-    for (let i = 0; i < exampleUserLocation.length; i++) {
-      let infowindow = new google.maps.InfoWindow({
-        content: '<img class="img-circle member-icon" src=\"' + exampleUserLocation[i].user_icon + '\" alt="avatar" />'
-      });
+    for (let i = 0; i < members.length; i++) {
+      console.log('map', members);
+      const infowindow = new google.maps.InfoWindow({ content: '<img class="img-circle map-icon" src=\"' + members[i].user_icon + '\" alt="avatar" />' });
       const marker = new google.maps.Marker({
-        position: exampleUserLocation[i],
+        position: { lat: parseFloat(members[i].lat), lng: parseFloat(members[i].lng) },
         map: map,
         title: 'Hello World!'
       });
@@ -62,14 +59,14 @@ class Map extends React.Component {
         };
         const infoWindow = new google.maps.InfoWindow({ map: map });
         infoWindow.setPosition(pos);
-        infoWindow.setContent('<img class="img-circle user-icon" src=\"' + exampleUser.user_icon + '\" alt="avatar" />');
+        infoWindow.setContent('<img class="img-circle map-icon" src=\"' + exampleUser.user_icon + '\" alt="avatar" />');
         map.setCenter(pos);
       }, () => {
-        handleLocationError(true, infoWindow, map.getCenter());
+        console.log('error');
       });
     } else {
       // Browser doesn't support Geolocation
-      handleLocationError(false, infoWindow, map.getCenter());
+      console.log('error');
     }
   }
 
@@ -82,5 +79,9 @@ class Map extends React.Component {
   }
 
 }
+
+Map.propTypes = {
+  members: PropTypes.array,
+};
 
 export default Map;

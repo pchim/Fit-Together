@@ -25,7 +25,9 @@ CREATE TABLE users (
   bmi DECIMAL,
   goal VARCHAR(255),
   points INTEGER DEFAULT 0,
-  user_icon VARCHAR(255)
+  user_icon VARCHAR(255),
+  lat DECIMAL,
+  lng DECIMAL
 );
 
 CREATE TABLE challenges (

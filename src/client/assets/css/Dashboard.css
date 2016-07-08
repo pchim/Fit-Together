@@ -82,9 +82,9 @@ body {
 
 .sidebar-nav li:nth-child(1) a:before { content: '\f00a'; }
 .sidebar-nav li:nth-child(2) a:before { content: '\f0c0'; }
-.sidebar-nav li:nth-child(3) a:before { content: '\f0e8'; }
-.sidebar-nav li:nth-child(4) a:before { content: '\f201'; }
-.sidebar-nav li:nth-child(5) a:before { content: '\f012'; }
+.sidebar-nav li:nth-child(3) a:before { content: '\f201'; }
+.sidebar-nav li:nth-child(4) a:before { content: '\f0e8'; }
+.sidebar-nav li:nth-child(5) a:before { content: '\e163'; }
 .sidebar-nav li:nth-child(6) a:before { content: '\f115'; }
 .sidebar-nav li:nth-child(7) a:before { content: '\f087'; }
 .sidebar-nav li:nth-child(8) a:before { content: '\e163'; }

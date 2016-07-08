@@ -1,25 +1,6 @@
  /*add element to the list below to show red borders */
- .challenges-header, .map-container {
-  border-width: 0.5px;
-  border-color: red;
-  border-style: solid;
-}
 
-.challenges-header-items {
-  display: inline-block;
-  margin: 10px;
-}
 
-.map-container {
-	height: 100%;
-	width: 100%;
-	margin-top: 2em;
-}
 
- #map {
-	height: 29em;
-	width: 39em;
-	margin: auto;
-}
 
 

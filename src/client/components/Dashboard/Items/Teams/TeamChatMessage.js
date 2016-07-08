@@ -10,7 +10,7 @@ class TeamChatMessage extends Component {
     return (
       <li>
         <div className="message-data message">
-          <span className="message-data-name"><i className="fa fa-circle online"></i> User: {this.props.message.user_id}</span>
+          <span className="message-data-name"><i className="fa fa-circle online"></i> {this.props.message.user_name}</span>
           <span className="message-data-time">{this.props.message.date_entered}</span>
         </div>
         <div className="message my-message">{this.props.message.message}</div>
@@ -18,5 +18,9 @@ class TeamChatMessage extends Component {
     );
   }
 }
+
+TeamChatMessage.propTypes = {
+  message: PropTypes.obj
+};
 
 export default TeamChatMessage;

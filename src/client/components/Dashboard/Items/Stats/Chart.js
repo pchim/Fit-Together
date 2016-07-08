@@ -23,6 +23,7 @@ class Chart extends Component {
     };
     console.log('props passed down', this.props.xyDataType);
     this.xyDataType = this.props.xyDataType;
+    this.updateRsquareView = this.props.updateRsquareView;
   }
 
   componentWillMount() {
@@ -47,7 +48,7 @@ class Chart extends Component {
     const maxWidth = this.width;
     const maxHeight = this.height;
     const D = this.D;
-    const svg = new d3Chart(`#${this.id}`, { width: maxWidth, height: maxHeight, D: this.D }, this.subdata, this.xyDataType);
+    const svg = new d3Chart(`#${this.id}`, { width: maxWidth, height: maxHeight, D: this.D, updateRsquareView: this.updateRsquareView }, this.subdata, this.xyDataType);
     this.svg = svg;
     if (!this.xyDataType) {
       svg.makeBars();

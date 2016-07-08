@@ -8,8 +8,8 @@ gray: #92959E;*/
 .chat-container {
   margin-top: 1em;
   /*margin: 0 auto;*/
-  width: 70em;
-  height: 49.15em;
+  width: 71em;
+  height: 60.15em;
   background: #444753;
   border-radius: 5px;
   font: 14px/20px "Lato", Arial, sans-serif;
@@ -40,7 +40,7 @@ gray: #92959E;*/
 }
 
 .people-list ul {
-  padding: 20px;
+  padding: 10px;
   height: 770px;
 }
 
@@ -70,7 +70,7 @@ gray: #92959E;*/
 }
 
 .chat {
-  width: 53em;
+  width: 54em;
   float: left;
   background: #F2F5F8;
   border-top-left-radius: 5px;
@@ -116,7 +116,7 @@ gray: #92959E;*/
   padding: 30px 30px 20px;
   border-bottom: 2px solid white;
   overflow-y: scroll;
-  height: 30em;
+  height: 41em;
 }
 
 .message-data {
