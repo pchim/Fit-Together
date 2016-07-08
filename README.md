@@ -37,6 +37,7 @@ Interact with teams in your community
 ![Team Chat](https://s31.postimg.org/hhwhy65mz/team_chat.png)
 
 Health and fitness trivia game
+
 ![Trivia](https://s31.postimg.org/8qph3wmbv/trivia.png) 
 
 ## Tech Stack
