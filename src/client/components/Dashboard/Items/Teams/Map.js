@@ -62,11 +62,11 @@ class Map extends Component {
         infoWindow.setContent('<img class="img-circle map-icon" src=\"' + exampleUser.user_icon + '\" alt="avatar" />');
         map.setCenter(pos);
       }, () => {
-        handleLocationError(true, infoWindow, map.getCenter());
+        console.log('error');
       });
     } else {
       // Browser doesn't support Geolocation
-      handleLocationError(false, infoWindow, map.getCenter());
+      console.log('error');
     }
   }
 
