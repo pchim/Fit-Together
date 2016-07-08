@@ -4,11 +4,23 @@
   border: 1px solid black; testing
 }*/
 
+.map-container {
+  height: 100%;
+  width: 100%;
+  margin-top: 0.5em;
+}
+
+ #map {
+  height: 32em;
+  width: 40em;
+  margin: auto;
+}
+
 .team-bar {
   border-bottom: 2px solid white;
-  height: 31em;
-  border: 1px solid black; 
+  height: 32em;
   margin-top: 0.5em;
+  /*border: 1px solid black; */
 
 }
 
@@ -16,8 +28,8 @@
   /*padding: 30px 30px 20px;*/
   border-bottom: 2px solid white;
   overflow-y: scroll;
-  height: 26em;
-  border: 1px solid black; 
+  height: 27.5em;
+  /*border: 1px solid black; */
   /*margin-top: 1em;*/
 }
 
@@ -26,7 +38,7 @@
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   background: #fff;
   border-radius: 2px;
-  width: 100%;
+  width: 96%;
   margin: 0.5em;
   position: relative;
   font: 14px/20px "Lato", Arial, sans-serif;

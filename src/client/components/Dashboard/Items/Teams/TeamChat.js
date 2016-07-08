@@ -31,8 +31,10 @@ class TeamChat extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const formData = {
-      user_id: 1, 
+      user_id: 1,
+      user_name: 'Jessica Jones', 
       team_id: 1,
+      team_name: 'Bay Area Hikers', 
       message: $('#message-to-send').val(),
       date_entered: new Date()
     };
@@ -52,21 +54,11 @@ class TeamChat extends Component {
             </div>
             <div className="chat-about">
               <div className="chat-with">Chat with Bay Area Hikers</div>
-              <div className="chat-num-messages">already have 902 messages</div>
+              <div className="chat-num-messages">already have {this.props.messages.length} messages</div>
             </div>
           </div>
           <div className="chat-history messagebody">
             <ul>
-              <li className="clearfix">
-                <div className="message-data align-right">
-                  <span className="message-data-time" >10:10 AM, Today</span> 
-                  <span className="message-data-name" >Olia</span>
-                  <i className="fa fa-circle me"></i>
-                </div>
-                <div className="message other-message float-right">
-                  Hi Vincent, how are you? How is the project coming along?
-                </div>
-              </li>
               {this.props.messages.map(message => <TeamChatMessage message={message} />)}
             </ul>
           </div>        
