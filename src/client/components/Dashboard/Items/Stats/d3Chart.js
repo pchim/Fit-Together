@@ -30,7 +30,7 @@ const getTrendLine = (xdataset, xfield, ydataset, yfield) => {
     
   const slope = SSxy / SSxx;
   const intercept = yBar - (xBar * slope);
-  const rSquareValue = Math.pow(SSxy, 2) / (SSxx * SSyy);
+  const rSquareValue = Math.floor((Math.pow(SSxy, 2) / (SSxx * SSyy)) * 1000) / 1000;
   
   return [slope, intercept, rSquareValue];
 };
@@ -46,6 +46,7 @@ class d3ChartClass {
   constructor(el, props, allData, xyDataType) {
     // currently only compatible with pixels
     // width, width padding, height, height padding, timeframe
+    this.updateRsquareView = props.updateRsquareView;
     this.width = Number((props.width).match(/\d+/)) * 0.83;
     this.wPad = (props.width * 0.17) / 2;
     this.height = Number((props.height).match(/\d+/)) * 0.92;
@@ -125,8 +126,8 @@ class d3ChartClass {
 
     this.makeXAxis2(xyData.xdataset, xyData.xdataType);
     this.makeYAxis2(xyData.ydataset, xyData.ydataType);
-    this.makeTitle('x', 0);
-    this.makeTitle('y', 0);
+    // this.makeTitle('x', 0);
+    // this.makeTitle('y', 0);
     this.makeTrendline(xyData.xdataset, xyData.xdataType, xyData.ydataset, xyData.ydataType, xScale, yScale);
     this.svg.selectAll('circle.plot')
     .data(dataset)  // array of daily sleep data
@@ -146,7 +147,6 @@ class d3ChartClass {
     });    
   }
 
-  /////////////////// maybe the scale stays the same??????? //////////////
   updateScatterXy(xyDataType) {
     // make scatter plot
     const xyData = this.preProcessDataXy(xyDataType);
@@ -197,7 +197,7 @@ class d3ChartClass {
         // create bar graph based on x, y, width, and variant color
         d3.select(this)
           .attr({
-            x: `${i * (barWidth) + barWidth + wPad}`,
+            x: `${i * (barWidth) + 3 * barWidth + 2}`,
             y: `${chartH - (data[dataType] * scale) - hPad}`,
             width: `${barWidth-1}`,
             height: `${data[dataType] * scale}`,
@@ -227,7 +227,7 @@ class d3ChartClass {
         d3.select(this)
           .transition()
           .attr({
-            x: `${i * barWidth + barWidth + wPad}`,
+            x: `${i * (barWidth) + 3 * barWidth + 2}`,
             y: `${(yScale(data[dataType]))}`,
             width: `${barWidth-1}`,
             height: `${attr.height - attr.hPad - yScale(data[dataType])}`,
@@ -386,7 +386,7 @@ class d3ChartClass {
                     .ticks(5);
     this.svg.append('g')
             .attr('class', 'y axis')
-            .attr('transform', `translate(${attr.wPad}, 0)`)
+            .attr('transform', `translate(${attr.wPad + 2 * barWidth}, 0)`)
             .call(mAxis);
   }
 
@@ -508,7 +508,7 @@ class d3ChartClass {
           'font-family': 'sans-serif',
           'font-size': `${fontSize}px`,
         })
-        .text('Hello!');
+        .text('x-axis');
     } else if (axis === 'y') {
       this.svg.selectAll('text.y.title')
         .data([dataNum])
@@ -521,7 +521,7 @@ class d3ChartClass {
           'font-family': 'sans-serif',
           'font-size': `${fontSize}px`,
         })
-        .text('Hello!');      
+        .text('y-axis');      
     }
   }
 
@@ -558,18 +558,19 @@ class d3ChartClass {
         .style('stroke', 'steelblue')
         .style('opacity', rSquareValue);
 
-    const fontSize = 10;
+    const fontSize = 30;
     this.svg.append('text')
       .attr('class', 'rsquare')
       .attr({
         x: attr.width / 2 + attr.wPad,
-        y: attr.height / 2 + attr.hPad,
+        y: attr.height - 2 * attr.hPad,
         'font-family': 'sans-serif',
         'font-size': `${fontSize}px`,
         'text-anchor': 'middle',        
       })
       .text(`r square value: ${rSquareValue}`);
 
+    //this.updateRsquareView(rSquareValue); 
     // this.svg.selectAll('path.trendline')
     //   .data([0])
     //   .enter()
@@ -619,6 +620,7 @@ class d3ChartClass {
       .transition(transDuration)
       .text(`r square value: ${rSquareValue}`);
 
+    //this.updateRsquareView(rSquareValue); 
     // this.svg.selectAll('path.trendline')
     //   .transition()
     //   .attr({

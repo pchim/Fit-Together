@@ -47,7 +47,7 @@
   margin-top: -3em;
   margin-left: 0em;
   width: 14em;
-  height: 40em;
+  height: 46.5em;
   background: #CCC;
   background-color: rgba(0, 24, 47, 0.6);
 }
@@ -173,7 +173,7 @@
   border-style: solid;
   margin-top: 0em;
   margin-left: 0em;
-  width: 100%;
+  width: 112%;
   height: 100%;
   background: #CCC;
   background-color: rgba(0, 24, 47, 0.6);
@@ -225,7 +225,7 @@
 .profile-text-body {
   color: white;
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 0.6em;
   font-weight: 300;
   letter-spacing: 0.05em;
   -webkit-font-smoothing: antialiased;
@@ -270,4 +270,5 @@ p {
 
 .table-header {
   color: white;
+  font-size: 0.75em;
 }
