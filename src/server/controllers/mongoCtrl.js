@@ -12,7 +12,9 @@ exports.sendMessage = (req, res) => {
     user_id: req.body.user_id,
     team_id: req.body.team_id,
     message: req.body.message,
-    date_entered: req.body.date_entered
+    date_entered: req.body.date_entered,
+    user_name: req.body.user_name,
+    team_name: req.body.team_name
   };
 
   fetch(baseLinkMessages + mongoApiKey,

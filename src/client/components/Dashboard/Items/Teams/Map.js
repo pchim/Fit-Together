@@ -38,7 +38,7 @@ class Map extends Component {
     
     for (let i = 0; i < members.length; i++) {
       console.log('map', members);
-      const infowindow = new google.maps.InfoWindow({ content: '<img class="img-circle member-icon" src=\"' + members[i].user_icon + '\" alt="avatar" />' });
+      const infowindow = new google.maps.InfoWindow({ content: '<img class="img-circle map-icon" src=\"' + members[i].user_icon + '\" alt="avatar" />' });
       const marker = new google.maps.Marker({
         position: { lat: parseFloat(members[i].lat), lng: parseFloat(members[i].lng) },
         map: map,
@@ -59,7 +59,7 @@ class Map extends Component {
         };
         const infoWindow = new google.maps.InfoWindow({ map: map });
         infoWindow.setPosition(pos);
-        infoWindow.setContent('<img class="img-circle user-icon" src=\"' + exampleUser.user_icon + '\" alt="avatar" />');
+        infoWindow.setContent('<img class="img-circle map-icon" src=\"' + exampleUser.user_icon + '\" alt="avatar" />');
         map.setCenter(pos);
       }, () => {
         handleLocationError(true, infoWindow, map.getCenter());

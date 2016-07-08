@@ -53,6 +53,16 @@
   height: 6em;
 }
 
+.map-icon {
+  position: relative; 
+  width: 3em; 
+  height: 3em;
+  margin: 0.0em;
+  border-width: 2.5px;
+  border-color: #333;
+  border-style: solid;
+}
+
 /*.user-icon {
   position: relative;
   width: 3.5rem;

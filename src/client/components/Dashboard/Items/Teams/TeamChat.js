@@ -34,7 +34,7 @@ class TeamChat extends Component {
       user_id: 1, 
       team_id: 1,
       message: $('#message-to-send').val(),
-      description: new Date()
+      date_entered: new Date()
     };
     
     this.props.sendMessage(formData); 
