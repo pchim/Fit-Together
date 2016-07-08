@@ -20,7 +20,7 @@ Peter Chim
 ## Table of Contents
 
 1. [Usage](#Usage)
-1. [Requirements](#requirements)
+1. [Tech Stack](#tech-stack)
 1. [System Architecture](#system-architecture)
 1. [Development](#development)
     1. [Installing Dependencies](#installing-dependencies)
@@ -32,10 +32,18 @@ Peter Chim
 
 > Some usage instructions
 
-## Requirements
+## Tech Stack
 
 - Node 0.10.x
+- Express
 - Webpack
+- React
+- Redux
+- MongoDB
+- PostgreSQL
+- Redis
+- Passport/OAuth
+- Socket.IO
 
 Webpack needs to be installed globally
 ```sh
@@ -82,7 +90,7 @@ If you want to autoupdate on saved changes made to server files, run in a separa
 npm run watch-s
 ```
 
-Before making any pull requests, be sure to run the command below to make sure no tests are broken and the linting is okay.
+Before making any pull requests, be sure to run the command below to make sure all tests are passing.
 ```sh
 npm test
 ```
