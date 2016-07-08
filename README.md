@@ -22,6 +22,7 @@ Peter Chim
 1. [Usage](#Usage)
 1. [Tech Stack](#tech-stack)
 1. [System Architecture](#system-architecture)
+1. [SQL Database Schema](#sql-database-schema)
 1. [Development](#development)
     1. [Installing Dependencies](#installing-dependencies)
     1. [Setup](#setup)
@@ -52,7 +53,13 @@ sudo npm install -g webpack
 
 ## System Architecture
 
-![System Architecture](https://github.com/Fit-Together/Fit-Together/blob/develop/system-architecture.png)
+![System Architecture](https://github.com/Fit-Together/Fit-Together/blob/develop/project-diagrams/system-architecture.png)
+
+
+## SQL Database Schema
+
+![SQL Database Schema](https://github.com/Fit-Together/Fit-Together/blob/develop/project-diagrams/db-schema.png)
+
 
 ## Development
 
