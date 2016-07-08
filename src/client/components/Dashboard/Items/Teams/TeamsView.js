@@ -40,7 +40,7 @@ class TeamsView extends Component {
       <div>
         <div className="main-container">
           <div className="col-md-8">
-            <Map />
+            <Map members={this.members} />
             <TeamChat members={this.members} messages={this.messages} sendMessage={this.props.sendMessage.bind(this)} />
           </div>
           <div className="col-md-4 team-bar">
@@ -65,7 +65,7 @@ class TeamsView extends Component {
               </button>
             </div>
             <div className="team-list"> 
-            <TeamsList teams={this.teams} deleteTeam={this.props.deleteTeam.bind(this)} fetchTeamChat={this.fetchTeamChat.bind(this)} />
+              <TeamsList teams={this.teams} deleteTeam={this.props.deleteTeam.bind(this)} fetchTeamChat={this.fetchTeamChat.bind(this)} />
             </div>
           </div>
         </div>
