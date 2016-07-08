@@ -9,7 +9,7 @@ const categories = [
     id: 1,
     name: 'Nutrition',
     description: 'See how much you know about the foods necessary for health and growth.',
-    img: 'https://www.fodsupport.org/images/NutritioniStock_000017664170Small.jpg'
+    img: 'http://wholeplantfoods.info/wp-content/uploads/2015/01/heart.png'
   },
   {
     id: 2,
@@ -41,6 +41,7 @@ class Trivia extends Component {
     this.quizStatus = nextProps.quizStatus;
     this.index = nextProps.index;
     this.leaderboard = nextProps.leaderboard;
+    this.questionStatus = nextProps.questionStatus;
   }
 
   handleQuizSelection(category) {
@@ -50,14 +51,16 @@ class Trivia extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const { selectedOption, updateScore, score } = this.props;
+    const { selectedOption, updateScore, score, updateQuestionStatus } = this.props;
 
     if (selectedOption === this.entry.answer) {
       this.score++;
       updateScore(this.score);
+      updateQuestionStatus('Correct');
     } else {
       this.score--;
       updateScore(this.score);
+      updateQuestionStatus('Incorrect');
     }
   }
 
@@ -100,7 +103,7 @@ class Trivia extends Component {
           </div>
           <div className="col-sm-4">
             <Leaderboard leaderboard={this.leaderboard} />
-            <Results score={this.score} />
+            <Results score={this.score} questionStatus={this.questionStatus} />
           </div>
         </div>
       </div>
@@ -126,7 +129,9 @@ Trivia.propTypes = {
   updateIndex: PropTypes.func,
   index: PropTypes.number,
   fetchLeaderboardRanks: PropTypes.func,
-  leaderboard: PropTypes.array
+  leaderboard: PropTypes.array,
+  updateQuestionStatus: PropTypes.func,
+  questionStatus: PropTypes.string
 };
 
 export default Trivia;

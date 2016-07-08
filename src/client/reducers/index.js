@@ -23,7 +23,8 @@ import {
   UPDATE_STATUS,
   UPDATE_INDEX,
   RECEIVE_TIP,
-  RECEIVE_LEADERBOARD
+  RECEIVE_LEADERBOARD,
+  UPDATE_QUESTION_STATUS
 } from '../constants/constants.js';
 
 export const user = (state, action) => {
@@ -170,6 +171,16 @@ export const messages = (state, action) => {
 export const quizStatus = (state, action) => {
   switch (action.type) {
     case UPDATE_STATUS: {
+      return action.data || state;
+    }
+    default:
+      return state || '';
+  }
+};
+
+export const questionStatus = (state, action) => {
+  switch (action.type) {
+    case UPDATE_QUESTION_STATUS: {
       return action.data || state;
     }
     default:

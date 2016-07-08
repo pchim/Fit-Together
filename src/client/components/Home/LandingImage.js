@@ -50,7 +50,7 @@ const LandingImage = () => (
     </div>
     <div className="section" id="section1">
       <div className="content">
-        <h1>Something Interesting</h1>
+        <h1>Community and Motivation</h1>
       </div>
       <div className="row">
         <div className="section-info col-md-4">
@@ -58,7 +58,7 @@ const LandingImage = () => (
             <img className="icon" src="images/run.png" alt="Something Icon" />
           </div>
           <div>
-            <h3>Something</h3>
+            <h3>Daily health & fitness tips</h3>
           </div>
         </div>
         <div className="section-info col-md-4">

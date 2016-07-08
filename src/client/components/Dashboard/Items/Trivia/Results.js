@@ -1,13 +1,15 @@
 import React, { PropTypes } from 'react';
 
-const Results = ({ score }) => (
+const Results = ({ score, questionStatus }) => (
   <div className="results">
-    <h3>Current Score: {score}</h3>
+    <div className="current-score">Current Score: {score}</div>
+    <div className="questionStatus">{questionStatus}</div>
   </div>
 );
 
 Results.propTypes = {
-  score: PropTypes.number
+  score: PropTypes.number,
+  questionStatus: PropTypes.string
 };
 
 export default Results;

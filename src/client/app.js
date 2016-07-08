@@ -16,7 +16,6 @@ import Signup from './containers/Auth';
 
 // Dashbboard Components
 import Profile from './components/Dashboard/Profile/Profile.js';
-
 import Stats from './containers/Stats.js';
 import Teams from './containers/Teams'; 
 import Settings from './components/Dashboard/Items/Settings/Settings';

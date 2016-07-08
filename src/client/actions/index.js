@@ -270,6 +270,8 @@ export const fetchQuizQuestions = (category) => (
   }
 );
 
+export const updateQuestionStatus = status => ({ type: c.UPDATE_QUESTION_STATUS, data: status });
+
 export const selectOption = option => ({ type: c.SELECT_OPTION, data: option });
 export const updateScore = score => ({ type: c.UPDATE_SCORE, data: score });
 

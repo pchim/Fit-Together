@@ -8,11 +8,12 @@ import {
   updateQuizStatus,
   updateUserPoints,
   updateIndex,
-  fetchLeaderboardRanks
+  fetchLeaderboardRanks,
+  updateQuestionStatus
 } from '../actions';
 
-const mapStateToProps = ({ questions, question, selectedOption, score, quizStatus, index, leaderboard }) => 
-  ({ questions, question, selectedOption, score, quizStatus, index, leaderboard });
+const mapStateToProps = ({ questions, question, selectedOption, score, quizStatus, index, leaderboard, questionStatus }) => 
+  ({ questions, question, selectedOption, score, quizStatus, index, leaderboard, questionStatus });
 
 const mapDispatchToProps = (dispatch) => ({
   selectOption: (option) => dispatch(selectOption(option)),
@@ -22,7 +23,8 @@ const mapDispatchToProps = (dispatch) => ({
   updateQuizStatus: (status) => dispatch(updateQuizStatus(status)),
   updateUserPoints: (points) => dispatch(updateUserPoints(points)),
   updateIndex: (index) => dispatch(updateIndex(index)),
-  fetchLeaderboardRanks: () => dispatch(fetchLeaderboardRanks())
+  fetchLeaderboardRanks: () => dispatch(fetchLeaderboardRanks()),
+  updateQuestionStatus: (status) => dispatch(updateQuestionStatus(status))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Trivia);

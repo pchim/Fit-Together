@@ -32,12 +32,13 @@ body {
 .btn-primary {
   background-color: #15C2DE;
   border-color: #15C2DE;
+  margin-top: 8px;
 }
 
 .entry-card {
   width: 600px;
   margin-top: 15px;
-  height: 27em;
+  height: 26em;
 }
 .entry-block {
   padding-left: 20px;
@@ -78,4 +79,13 @@ div.results {
 .star-img {
   height: 330px;
   width: 400px;
+  margin-left: 4em;
+}
+
+.current-score, .leaderboard-title {
+  font-size: 20px;
+  color: steelblue;
+}
+.questionStatus {
+  font-size: 18px;
 }

@@ -9,7 +9,7 @@ const DisplayMsg = ({ message, score }) => (
             {message} {score} pts
           </h4>
           <img 
-            src="https://pixabay.com/static/uploads/photo/2013/07/12/14/05/shooting-star-147722_960_720.png" 
+            src="http://xodia.pythonanywhere.com/static/xodia/images/winner.png" 
             alt=""
             className="star-img"
           />
