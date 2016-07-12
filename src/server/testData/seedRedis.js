@@ -7,7 +7,8 @@ const bluebird = require('bluebird');
 bluebird.promisifyAll(redis.RedisClient.prototype);
 bluebird.promisifyAll(redis.Multi.prototype);
 const url = require('url');
-const host = url.parse(process.env.HOST);
+let hostVar = process.env.HOST || 'http://localhost:3000';
+const host = url.parse(hostVar);
 const client = redis.createClient('6379', host.hostname);
 
 client.on('error', (err) => {

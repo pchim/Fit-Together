@@ -1,7 +1,8 @@
 const redis = require('redis');
 const bluebird = require('bluebird');
 const url = require('url');
-const host = url.parse(process.env.HOST);
+let hostVar = process.env.HOST || 'http://localhost:3000';
+const host = url.parse(hostVar);
 bluebird.promisifyAll(redis.RedisClient.prototype);
 bluebird.promisifyAll(redis.Multi.prototype);
 
