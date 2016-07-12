@@ -9,15 +9,12 @@ class ChartData extends Component {
     super(props);
     this.props.getActivities();
     this.activities = [];
-    console.log('chartData', props);
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('these are next props', nextProps);
     this.activities = nextProps.activities;
   }
   render() {
-    console.log('these are activities!!!', this.activities);
 
     return (
       <div>

@@ -63,11 +63,4 @@ const sleepMemData = () => {
 
 export default sleepMemData;
 
-// fs.writeFile('./exampleSleepData.json', JSON.stringify(exampleSleepData), 
-// err => console.log('saved!'));
-// fs.writeFile('./exampleMEMData.json', JSON.stringify(exampleMEMData), 
-// err => console.log('saved!'));
-// console.log('hello!');
-// console.log(exampleSleepData);
-// console.log(exampleMEMData);
 

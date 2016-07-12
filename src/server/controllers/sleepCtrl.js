@@ -21,8 +21,6 @@ exports.addSleep = (req, res) => {
 };
 
 exports.getSleep = (req, res) => {
-  /** TESTING **/
-  console.log('FOR TESTING PURPOSES, user_id = 1');
   req.body.user_id = 1;
   db.any('select users.id, sleep.date_performed, sleep.duration, ' +
     'sleep.quality from users, sleep where users.id=${user_id} ' +

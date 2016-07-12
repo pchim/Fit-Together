@@ -43,7 +43,6 @@ export const getUser = () => (
     })
     .then(res => res.json())
     .then(userInfo => {
-      console.log('userInfo inside getUser', userInfo); 
       return dispatch(receiveUser(userInfo[0]));
     })
     .catch(err => dispatch(error(err)))
@@ -126,7 +125,6 @@ export const fetchTeamMembers = (obj) => (
     })
     .then(res => res.json())
     .then(response => {
-      console.log('team members', response.data);
       dispatch(receiveTeamMembers(response.data));
     })
     .catch(err => dispatch(error(err)))
@@ -198,7 +196,6 @@ export const joinTeam = (obj) => {
 };
 
 export const getSleep = () => {
-  console.log('get sleep dispatch');
   return dispatch => {
     fetch('/api/usersleep', {
       method: 'GET',
@@ -366,7 +363,6 @@ export const fetchMessages = (obj) => {
     })
     .then(res => res.json())
     .then(response => {
-      console.log('response', response);
       dispatch(receiveMessages(response.data));
     })
     .catch(err => dispatch(error(err)))
@@ -387,7 +383,6 @@ export const sendMessage = (obj) => {
     })
     .then(res => res.json())
     .then(response => {
-      console.log('response add message', response);
       dispatch(addMessage(response.data));
     })
     .catch(err => dispatch(error(err)))

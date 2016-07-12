@@ -18,10 +18,8 @@ exports.addEntry = (req, res) => {
 };
 
 exports.getEntries = (req, res) => {
-  console.log('inside getEntries in server ####');
   db.many('select * from entries')
     .then(entries => {
-      console.log('entries from getEntries: ', entries);
       res.status(200)
         .json({
           status: 'success',

@@ -8,7 +8,6 @@ import TeamChat from './TeamChat';
 class TeamsView extends Component {
   constructor(props) {
     super(props);
-    console.log('team props', props);
     this.props.fetchUserTeams({ user_id: 1 });
     this.props.fetchOtherTeams({ user_id: 1 });
     this.props.fetchMessages({ team_id: 1 });
@@ -26,8 +25,6 @@ class TeamsView extends Component {
     this.otherteams = nextProps.otherteams;
     this.messages = nextProps.messages;
     this.members = nextProps.members;
-    // console.log('this.teams', this.teams);
-    // console.log('this.otherteams', this.otherteams);
   }
 
   fetchTeamChat(teamId, userId) {

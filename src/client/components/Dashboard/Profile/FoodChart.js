@@ -20,7 +20,6 @@ class FoodChart extends Component {
   componentWillReceiveProps(nextProps) {
     this.foodData = nextProps.activities.data;
     this.mostRecent = nextProps.activities.data[2].slice(-1)[0].calories;
-    console.log('most recent food', this.mostRecent);
   }
 
   render() {

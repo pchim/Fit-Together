@@ -12,8 +12,6 @@ class RecentFoodActivity extends Component {
 
   componentWillReceiveProps(nextProps) {
     this.foodData = nextProps.activities.activities.data[2];
-
-    console.log('INSIDE FOOOOOOOOOD', nextProps);
   }
 
   render() {

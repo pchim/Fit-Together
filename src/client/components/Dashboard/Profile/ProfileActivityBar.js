@@ -9,10 +9,6 @@ class ProfileActivityBar extends Component {
     super(props);
   }
 
-  componentWillReceiveProps(nextProps) {
-    console.log('these are nextProps in profile activities', nextProps);
-  }
-
   render() {
     return (
       <div>

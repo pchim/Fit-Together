@@ -7,7 +7,6 @@ const today = moment().format("MM-DD-YYYY");
 class LogbookExerciseView extends Component {
   constructor(props) {
     super(props);
-    console.log('INSIDE log exercise', props);
   }
 
   handleSubmit(event) {
@@ -27,7 +26,6 @@ class LogbookExerciseView extends Component {
     this.refs.distance.value = '';
     this.refs.reps.value = '';
     this.refs.sets.value = '';
-    console.log('added data');
   }
 
   render() {

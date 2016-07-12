@@ -3,7 +3,6 @@ const db = require('../db/connection.js');
 exports.getLeaderboardRanks = (req, res) => {
   db.many('select * from users order by points desc limit 5')
     .then(users => {
-      console.log('users in getLeaderboardRanks: ', users);
       res.status(200)
         .json({
           status: 'success',

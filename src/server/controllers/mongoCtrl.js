@@ -27,7 +27,6 @@ exports.sendMessage = (req, res) => {
       body: JSON.stringify(obj)
     })
     .then(() => {
-      console.log('success');
       res.status(201)
         .json({
           status: 'success',
@@ -53,7 +52,6 @@ exports.getMessagesByTeam = (req, res) => {
     })
     .then((response) => response.json())
     .then((responseData) => {
-      // console.log('response 1', responseData);
       res.status(200)
         .json({
           status: 'success',

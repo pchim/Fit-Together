@@ -14,7 +14,6 @@ const person = {
 const image = 'http://khns.org/wp-content/uploads/2014/07/profile-icon-400x380.png';
 
 const Info = ({ user }) => {
-  console.log('user in Info: ', user);
   return (
     <div className="top-info">
       <div>

@@ -42,7 +42,6 @@ router.post('/api/addSleep', logSleep.addSleep);
 
 router.get('/api/user', (req, res) => {
   if (req.user) {
-    console.log('insider req', req.user.username);
     db.any('select * from users where username=$1', [req.user.username])
   .then(data => {
     res.json(data);
@@ -75,7 +74,6 @@ router.get('/auth/fitbit',
 router.get('/auth/fitbit/callback', 
   passport.authenticate('fitbit', { failureRedirect: '/login', failureFlash: true }),
   (req, res) => {
-    console.log('inside /fitbit/callback of router >>');
     if (req.user) {
       const userData = {
         accessToken: req.user.accessToken,
@@ -93,7 +91,6 @@ router.get('/auth/moves', passport.authenticate('moves'));
 router.get('/auth/moves/callback', 
   passport.authenticate('moves', { failureRedirect: '/login' }),
   (req, res) => {
-    console.log('inside callback', req.user);
     const username = req.user;
     res.redirect('/dashboard');
   }

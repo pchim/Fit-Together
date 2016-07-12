@@ -7,7 +7,6 @@ const today = moment().format("MM-DD-YYYY");
 class LogbookMemView extends Component {
   constructor(props) {
     super(props);
-    console.log('INSIDE LOGBOOKENERGY', props);
   }
 
   handleSubmit(event) {
@@ -23,7 +22,6 @@ class LogbookMemView extends Component {
     this.refs.mood.value = '';
     this.refs.energy.value = '';
     this.refs.motivation.value = '';
-    console.log('added data');
   }
 
   render() {

@@ -4,7 +4,6 @@ import React, { Component, PropTypes } from 'react';
 class Logbook extends Component {
   constructor(props) {
     super(props);
-    console.log('INSIDE LOGBOOK===>', props);
   }
 
   render() {

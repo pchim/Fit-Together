@@ -12,7 +12,6 @@ exports.addActivity = (req, res) => {
         user_id: req.body.user_id,
         daily_activity_id: activityId.id
       };
-      console.log('Successly inserted daily activity', userActivity);
       return db.none('insert into users_daily_activities(user_id, daily_activity_id)' + 
         'values(${user_id}, (select id from daily_activities where ' +
         'id=${daily_activity_id}))', userActivity);
@@ -31,8 +30,6 @@ exports.addActivity = (req, res) => {
 };
 
 exports.getActivities = (req, res) => {
-  /** TESTING **/
-  console.log('FOR TESTING PURPOSES, user_id = 1');
   req.body.user_id = 1;
   db.tx(t => {
     return t.batch([
@@ -51,7 +48,6 @@ exports.getActivities = (req, res) => {
       ]);
   })
   .then(data => {
-    // console.log('----------tx server side-------------', data);
     res.status(200)
       .json({
         status: 'success',

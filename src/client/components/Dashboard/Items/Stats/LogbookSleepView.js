@@ -7,7 +7,6 @@ const today = moment().format("MM-DD-YYYY");
 class LogbookSleepView extends Component {
   constructor(props) {
     super(props);
-    console.log('INSIDE sleep', props);
   }
 
   handleSubmit(event) {
@@ -21,7 +20,6 @@ class LogbookSleepView extends Component {
     this.props.addSleep(formData);
     this.refs.duration.value = '';
     this.refs.quality.value = '';
-    console.log('added data');
   }
 
   render() {

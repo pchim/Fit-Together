@@ -21,7 +21,6 @@ class Chart extends Component {
     this.state = {
       xyDataType
     };
-    console.log('props passed down', this.props.xyDataType);
     this.xyDataType = this.props.xyDataType;
     this.updateRsquareView = this.props.updateRsquareView;
   }
@@ -59,8 +58,6 @@ class Chart extends Component {
       this.svg.makeScatterXy(this.xyDataType);
       this.svg.updateScatterXy(this.xyDataType);
     }
-    console.log(svg);
-    // this.svg.makeScatter();
   }
 
   render() {

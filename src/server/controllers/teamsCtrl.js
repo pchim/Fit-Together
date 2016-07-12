@@ -11,7 +11,6 @@ exports.createTeam = (req, res) => {
         user_id: req.body.user_id,
         team_id: teamId.id
       };
-      console.log('Successly inserted team', userTeam);
       return db.one('insert into users_teams(user_id, team_id)' + 
         'values(${user_id}, (select id from teams where id=${team_id}))' +
         ' returning team_id', userTeam);
@@ -67,7 +66,6 @@ exports.findTeam = (req, res) => {
     return t.batch([q1, q2]);
   })
   .then((data) => {
-    console.log(data);
     res.status(200)
       .json({
         status: 'success',
@@ -106,7 +104,6 @@ exports.getTeamMembers = (req, res) => {
       '(select user_id from users_teams where team_id=${team_id} and ' + 
       'user_id!=${user_id})', req.body)
   .then((data) => {
-    console.log('team members', data);
     res.status(200)
       .json({
         status: 'success',

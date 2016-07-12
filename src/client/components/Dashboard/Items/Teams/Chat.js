@@ -14,7 +14,6 @@ export default class Chat extends React.Component {
   }
 
   recieveMessage(message) {
-    console.log(this.state);
     let messages = this.state.messages;
     this.setState({
       messages: messages.concat(message)

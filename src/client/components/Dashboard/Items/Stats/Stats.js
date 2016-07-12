@@ -11,9 +11,7 @@ import LogbookSleepView from './LogbookSleepView';
 class Stats extends Component {
   constructor(props) {
     super(props);
-    console.log('component constructor stats ', this.props);
     this.activities = this.props.activities;
-    console.log(this.props.activities);
     // data constants
     this.D = D;
     this.dataNum = 0;
@@ -45,22 +43,18 @@ class Stats extends Component {
   }
 
   xsetDataNum(xdataNum) {
-    console.log('clicked!!!'); //
     this.setState({ xdataNum, xfieldNum: 0 });
   }
 
   xsetFieldNum(xfieldNum) {
-    console.log('clicked!!!'); //
     this.setState({ xfieldNum });
   }
 
   ysetDataNum(ydataNum) {
-    console.log('clicked!!!'); //
     this.setState({ ydataNum, yfieldNum: 0 });
   }
 
   ysetFieldNum(yfieldNum) {
-    console.log('clicked!!!'); //
     this.setState({ yfieldNum });
   }
 

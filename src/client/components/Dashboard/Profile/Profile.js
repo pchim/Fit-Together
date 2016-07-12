@@ -14,11 +14,9 @@ import Tips from './Tips.js';
 class Profile extends Component {
   constructor(props) {
     super(props);
-    console.log('PROPS INSIDE PROFILE PAGE!!!', props);
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('next props inside profile PROFILE page!!!!!!!!!!!!', nextProps);
   }
 
   render() {

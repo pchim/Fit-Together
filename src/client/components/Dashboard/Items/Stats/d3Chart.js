@@ -18,11 +18,8 @@ const getTrendLine = (xdataset, xfield, ydataset, yfield) => {
   const xReduceSum = (sum, dayData) => sum + Number(dayData[xfield]);
   const yReduceSum = (sum, dayData) => sum + Number(dayData[yfield]);
   const reduceSum =(sum, num) => sum + num;
-  console.log('x data in trend: ', xdataset[0][xfield], ' field: ', xfield);
   const xBar = xdataset.reduce(xReduceSum, 0) / xdataset.length;
   const yBar = ydataset.reduce(yReduceSum, 0) / ydataset.length;
-  // GOOD
-  console.log('xbar and ybar: ', xBar, yBar);
   const SSxx = xdataset.map(xi => Math.pow(Number(xi[xfield]) - xBar, 2)).reduce(reduceSum);
   const SSyy = ydataset.map(yi => Math.pow(Number(yi[yfield]) - yBar, 2)).reduce(reduceSum);
   const SSxy = xdataset.map((xi, index) => (Number(xi[xfield]) - xBar) * (Number(ydataset[index][yfield]) - yBar))
@@ -95,7 +92,6 @@ class d3ChartClass {
     // TODO: RETURN DATA FOR A SPECIFIC XDATANUM AND XFIELDNUM
     const attr = this.attr;
     // data for one
-    console.log('preprocess: ', xyDataType);
     const xdataset = (attr.allData)[xyDataType.xdataNum];
     const xdataType = (attr.D)[xyDataType.xdataNum].fields[xyDataType.xfieldNum];
     const ydataset = (attr.allData)[xyDataType.ydataNum];
@@ -150,7 +146,6 @@ class d3ChartClass {
   updateScatterXy(xyDataType) {
     // make scatter plot
     const xyData = this.preProcessDataXy(xyDataType);
-    console.log('in update, xyData: ', xyData);
     const rSize = 8;
     const attr = this.attr;
     const dataset = xyData.xydataset;
@@ -191,8 +186,6 @@ class d3ChartClass {
       .append('rect')   // create the bar graph
       .attr('class', 'bar')
       .each(function (data, index) {
-        // if based on time...
-        //console.log('hey1', data);
         const i = getDaysDifference(dataset[0]['date_performed'], data.date_performed);
         // create bar graph based on x, y, width, and variant color
         d3.select(this)
@@ -220,9 +213,7 @@ class d3ChartClass {
       .data(dataset)  // array of daily sleep data
       .each(function (data, index) {
         // if based on time...
-        //console.log('hey1', data);
         const i = getDaysDifference(dataset[0]['date_performed'], data.date_performed);
-        console.log(i);
         // create bar graph based on x, y, width, and variant color
         d3.select(this)
           .transition()
@@ -538,7 +529,6 @@ class d3ChartClass {
 
   makeTrendline(xdataset, xfield, ydataset, yfield, xScale, yScale) {
     const [slope, intercept, rSquareValue] = getTrendLine(xdataset, xfield, ydataset, yfield);
-    console.log('............slope, intercept, rsquared....... ', slope, intercept, rSquareValue);
     const xquantities = (xdataset).map(dayData => Number(dayData[xfield]));
     const xMax = Math.max(...xquantities);
     const attr = this.attr;
@@ -590,7 +580,6 @@ class d3ChartClass {
 
   updateTrendline(xdataset, xfield, ydataset, yfield, xScale, yScale) {
     const [slope, intercept, rSquareValue] = getTrendLine(xdataset, xfield, ydataset, yfield);
-    console.log('............slope, intercept, rsquared....... ', slope, intercept, rSquareValue);
     const xquantities = (xdataset).map(dayData => Number(dayData[xfield]));
     const xMax = Math.max(...xquantities);
     const attr = this.attr;

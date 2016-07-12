@@ -23,7 +23,6 @@ class MemChart extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('this is inside mem chart!!', nextProps);
     this.moodData = nextProps.activities.data[3].slice(-7).map(s => parseInt(s.mood));
     this.energyData = nextProps.activities.data[3].slice(-7).map(s => parseInt(s.energy));
     this.motivationData = nextProps.activities.data[3].slice(-7).map(s => parseInt(s.motivation));

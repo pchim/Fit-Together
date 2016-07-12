@@ -6,7 +6,6 @@ const config = require(fileHelper.apiKeyPath);
 const db = require('../db/connection.js');
 
 const addFitbitUser = (userData, done, accessToken, profile) => {
-  console.log('inside addFitbitUser >>>>');
   db.none('insert into users(name, username, password, email, weight, bmi, goal)' +
   'values(${name}, ${username}, ${password}, ${email}, ${weight}, ${bmi}, ${goal})',
      userData)
@@ -23,8 +22,6 @@ const addFitbitUser = (userData, done, accessToken, profile) => {
 };
 
 const checkIfUserInDb = (userData, done, accessToken, profile) => {
-  console.log('inside checkIfUserInDb >>>');
-  console.log('userData in checkIfUserInDb: ', userData);
   db.one('select * from users where username=${username}', userData)
     .then(() => (
       done(null, {
@@ -45,7 +42,6 @@ passport.use(new FitbitStrategy({
   callbackURL: config.Fitbit.callbackURL
 }, 
   (accessToken, refreshToken, profile, done) => {
-    console.log('inside FitbitStrategy >>>');
     const userData = {
       name: profile._json.user.fullName,
       username: profile._json.user.displayName,
@@ -69,7 +65,6 @@ passport.serializeUser((user, done) => {
     id: user.profile.id,
     username: user.profile.displayName
   };
-  console.log('insider serializeUser', userObj);
   done(null, userObj);
 });
 

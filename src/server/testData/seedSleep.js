@@ -1,13 +1,6 @@
 // to seed activities table, do 'npm run seed' from root directory
 const sleepCtrl = require('../controllers/sleepCtrl.js');
 
-// const fs = require('fs');
-
-// let result;
-// fs.readFile(__dirname + '/exampleSleepData.json', (err, data) => {
-//   result = JSON.parse(data);
-//   console.log(result);
-// });
 
 const exampleSleepData = [ 
   { user_id: 1, date_performed: '06/01/2016', duration: 6.8, quality: 12 },

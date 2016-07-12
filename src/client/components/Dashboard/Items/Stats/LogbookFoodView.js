@@ -7,7 +7,6 @@ const today = moment().format("MM-DD-YYYY");
 class LogbookFoodView extends Component {
   constructor(props) {
     super(props);
-    console.log('INSIDE LOGBOOKENERGY', props);
   }
 
   handleSubmit(event) {
@@ -25,7 +24,6 @@ class LogbookFoodView extends Component {
     this.refs.fats.value = '';
     this.refs.carbs.value = '';
     this.refs.calories.value = '';
-    console.log('added data');
   }
 
   render() {

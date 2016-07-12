@@ -6,7 +6,6 @@ const mapStateToProps = ({ user }) => ({ user });
 const mapDispatchToProps = (dispatch) => ({
   addMem: (obj) => dispatch(addMem(obj)),
   addExercise: (obj) => {
-    console.log('inside addExercise');
     return dispatch(addExercise(obj));
   },
   addFood: (obj) => dispatch(addFood(obj)),

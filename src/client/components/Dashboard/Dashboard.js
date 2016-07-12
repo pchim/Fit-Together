@@ -14,20 +14,6 @@ export default class Dashboard extends Component {
 
 
   componentWillReceiveProps(nextProps) {
-    console.log('these are nextProps in dashboard!!! should have tips', nextProps);
-    // this.sleep = nextProps.sleep;
-    // console.log('adfasdfas', parseFloat(this.sleep[0].quality), parseFloat('7.7'));
-    // let num = 0;
-    // const test = this.sleep.map(function(s) {
-    //   const q = parseFloat(s.quality);
-    //   const d = parseFloat(s.duration);
-    //   s.quality = q;
-    //   s.duration = d;
-    //   s.index = num;
-    //   num++;
-    //   return s;
-    // });
-    // this.sleep = test;
     this.activities = nextProps.activities;
     this.tips = nextProps.tips;
   }
@@ -36,7 +22,6 @@ export default class Dashboard extends Component {
     const { user } = this.props;
     const { activities } = this.activities; 
 
-    console.log('inside render of dashboard tips and user', this.tips, user);
     return (
       <div>
         <SideNavBar />

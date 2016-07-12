@@ -11,7 +11,6 @@ exports.getUsername = function (accessToken) {
       return response.json();
     })
     .then(function (json) {
-      console.log('i m inside moves', json[0].summary);
       return Promise.resolve(json);
     });
 };

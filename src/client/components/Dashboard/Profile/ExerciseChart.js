@@ -21,7 +21,6 @@ class ExerciseChart extends Component {
   componentWillReceiveProps(nextProps) {
     this.exerciseData = nextProps.activities.data;
     this.mostRecent = nextProps.activities.data[1].slice(-1)[0].duration;
-    console.log('this is exerciseData', this.mostRecent);
   }
 
   render() {  

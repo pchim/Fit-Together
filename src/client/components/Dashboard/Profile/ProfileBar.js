@@ -9,17 +9,14 @@ const heightIcon = 'http://www.clker.com/cliparts/L/D/O/L/0/7/male-restroom-symb
 class ProfileBar extends Component {
   constructor(props) {
     super(props);
-    console.log('inside profileBar!! =====?============', props);
     this.user = [];
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('next props inside profilebar!!!', nextProps);
     this.user = nextProps.user.data;
   }
 
   render() {
-    console.log('this user inside profile bar', this.user);
     return (
       <div>
         <div className="profile-image-container">

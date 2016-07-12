@@ -35,7 +35,6 @@ class SleepChart extends Component {
     }, {
       data: this.qualityData
     }];
-    console.log('this is duration', this.sleepData);
 
     return (
       <div className="sleep-chart-container">
