@@ -9,7 +9,8 @@ const images = {
   map: 'https://www.google.com/maps/d/thumbnail?mid=1TT-ipSapjGpDfHf_1kQFxI9c0YY&hl=en',
   tegan: 'https://avatars0.githubusercontent.com/u/16481164?v=3&s=400',
   aj: 'https://avatars0.githubusercontent.com/u/12506734?v=3&s=400',
-  peter: 'https://avatars3.githubusercontent.com/u/16533019?v=3&s=400', 
+  peter: 'https://avatars3.githubusercontent.com/u/16533019?v=3&s=400',
+  lynn: 'https://avatars0.githubusercontent.com/u/15623227?v=3&s=400' 
 };
 
 const LandingImage = () => (
@@ -93,17 +94,17 @@ const LandingImage = () => (
         </div>
         <div className="footer-info col-md-3">
           <div>
-            <a href="https://github.com/ajgrande924"><img className="icon" src={images.peter} alt="Something Icon" /></a>
+            <a href="https://github.com/ajgrande924"><img className="icon" src={images.aj} alt="Something Icon" /></a>
           </div>
         </div>
         <div className="footer-info col-md-3">
           <div>
-            <a href="https://github.com/pchim"><img className="icon" src={images.aj} alt="Health Icon" /></a>
+            <a href="https://github.com/pchim"><img className="icon" src={images.peter} alt="Health Icon" /></a>
           </div>
         </div>
         <div className="footer-info col-md-3">
           <div>
-            <a href="https://github.com/lcbits"><img className="icon" src={images.aj} alt="Health Icon" /></a>
+            <a href="https://github.com/lcbits"><img className="icon" src={images.lynn} alt="Health Icon" /></a>
           </div>
         </div>
       </div>
